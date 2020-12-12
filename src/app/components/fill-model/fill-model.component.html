@@ -3,6 +3,12 @@ Id модели*: <input type="number" name="id" required><br>
 Дата выпуска*: <input type="datetime" name="date" required><br>
 Цена: <input type="number" name="price"><br>
 
-<button>Добавить модель</button><br>
+<button (click)="addModel()" class="add">Добавить модель</button><br>
 
-* - обязательное поле
+* - обязательное поле<br><br>
+
+<p>
+    Моделей добавлено: {{newModels}}<br>
+    <button (click)="deleteModel()" class="delete">Убрать модель</button>
+</p>
+

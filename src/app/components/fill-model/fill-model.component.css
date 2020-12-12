@@ -1,11 +1,16 @@
 input {
     margin-top: 10px;
 }
-button {
+button.add {
     font-size: 25px;
     margin-top: 15px;
     margin-bottom: 20px;
     border-radius: 3px;
     color: blanchedalmond;
+    background-color: chocolate;
+}
+button.delete {
+    border-radius: 3px;
+    color:blanchedalmond;
     background-color: chocolate;
 }
