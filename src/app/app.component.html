@@ -1,6 +1,19 @@
-<nav>
-  <a routerLink='/home' class="home">HOME</a>
-  <a routerLink='/fillmodel' class="fill">FILL A MODEL</a>
-  <a routerLink='/about'class="about">ABOUT</a>
-</nav>
+<div>
+  <nav>
+    <ul class="nav">
+      <li>
+        <a routerLink='/home' class="home">HOME</a>
+      </li>
+      <li>
+        <a routerLink='/fillmodel' class="fill">FILL A MODEL</a>
+      </li>
+      <li>
+        <a routerLink='/about'class="about">ABOUT</a>
+      </li>
+      <li *ngFor="let model of models">
+        <a [routerLink]="['model', model.id]" [queryParams]="{'product':model.product, 'date':model.date, 'price':model.price}">{{model.id}}</a> 
+      </li>
+    </ul>
+  </nav>
+</div>
 <router-outlet></router-outlet>

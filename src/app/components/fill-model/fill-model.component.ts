@@ -1,5 +1,6 @@
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fill-model',
@@ -8,23 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FillModelComponent implements OnInit {
 
-  newModels: number = 0;
-
-  constructor() { }
-
-  addModel(){
-    if(this.newModels<6){
-      this.newModels++;
-    }
+  item = {
+    id: 0,
+    product: 'default',
+    date: 2015,
+    price: 10000
   }
 
-  deleteModel(){
-    if(this.newModels>0){
-      this.newModels--;
-    }
-  }
+  constructor(private router: Router) {
 
+  }
   ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
-}
+  goToItem(item: any){
+    this.router.navigate(['/model', item.id],{
+      queryParams: {
+        "product": item.product,
+        "date": item.date,
+        "price": item.price
+      }
+    })
+  }
+  models: any[] = [];
+  addModel(model:any){
+    this.models.push({
+        "id": model.id, 
+        "product": model.product,
+       "date": model.date,
+    "price": model.price    
+  })
+ }
+ 
+} 
