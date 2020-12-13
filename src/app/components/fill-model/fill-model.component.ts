@@ -24,8 +24,8 @@ export class FillModelComponent implements OnInit {
       this.router.navigate(["/"], {
         queryParams: {
           "id": this.model.id,
-          "name": this.model.product,
-          "datetime": this.model.date,
+          "product": this.model.product,
+          "date": this.model.date,
           "price": this.model.price,
         }
       })

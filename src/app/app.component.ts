@@ -20,8 +20,8 @@ export class AppComponent {
         
         let data = JSON.stringify({
           id: qparams["id"],
-          name: qparams["product"],
-          datetime: qparams["date"],
+          product: qparams["product"],
+          date: qparams["date"],
           price: qparams["price"],
         });
         localStorage.setItem(qparams["id"], data);
