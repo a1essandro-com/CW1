@@ -8,26 +8,19 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./models.component.css']
 })
 export class ModelsComponent implements OnInit {
+  model: any;
 
-  id: number = 0;
-  product: string = 'default';
-  date: number = 2005;
-  price: number = 10000;
-  routeSub: Subscription;
-  querySub: Subscription;
+  Sub: Subscription;
 
-  constructor(private route: ActivatedRoute) {
-    this.routeSub = route.params.subscribe(params =>{
-      this.id = params["id"];
-    });
-    this.querySub = route.queryParams.subscribe(qparams =>{
-      this.product = qparams["product"];
-      this.date = qparams["date"];
-      this.price = qparams["price"];
-    });
-   }
+  constructor(private route: ActivatedRoute) { 
+    this.Sub = this.route.params.subscribe(params => {
+      if (params["id"] !== undefined) {
+        this.model = localStorage.getItem(params["id"]);
+      }
+    })
+  }
 
   ngOnInit(): void {
   }
 
-}
+ }

@@ -11,7 +11,7 @@
         <a routerLink='/about'class="about">ABOUT</a>
       </li>
       <li *ngFor="let model of models">
-        <a [routerLink]="['model', model.id]" [queryParams]="{'product':model.product, 'date':model.date, 'price':model.price}">{{model.id}}</a> 
+        <a [routerLink]="['models', model]">Модель {{model}}</a> 
       </li>
     </ul>
   </nav>

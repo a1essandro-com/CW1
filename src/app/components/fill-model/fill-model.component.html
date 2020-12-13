@@ -1,9 +1,9 @@
-Id модели*: <input type="number" name="id" required [(ngModel)]='item.id'><br>
-Название*: <input type="text" name="product" required [(ngModel)]='item.product'><br>
-Дата выпуска*: <input type="datetime" name="date" required [(ngModel)]='item.date'><br>
-Цена: <input type="number" name="price" [(ngModel)]='item.price'><br>
+Id модели*: <input type="number" name="id" required [(ngModel)]='model.id'><br>
+Название*: <input type="text" name="product" required [(ngModel)]='model.product'><br>
+Дата выпуска*: <input type="datetime" name="date" required [(ngModel)]='model.date'><br>
+Цена: <input type="number" name="price" [(ngModel)]='model.price'><br>
 
-<button (click)="addModel(item)" class="add">Добавить модель</button><br>
+<button (click)="addModel()" class="add" >Добавить модель</button><br>
 
 * - обязательное поле<br><br>
 
